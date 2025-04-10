@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:postgresql://localhost:5433/user_service_db
+    username: postgres
+    password: Nadi.3344
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8080
