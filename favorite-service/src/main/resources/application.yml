@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: favorite-service
+  datasource:
+    url: jdbc:postgresql://localhost:5437/favorite_service_db
+    username: postgres
+    password: Nadi.3344
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8083

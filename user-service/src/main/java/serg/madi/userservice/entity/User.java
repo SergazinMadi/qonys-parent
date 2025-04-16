@@ -13,6 +13,9 @@ public class User{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true, nullable = false)
+    private String keycloakId;
+
     @NotBlank(message = "Email is required")
     @Column(unique = true, nullable = false)
     private String email;
@@ -23,6 +26,4 @@ public class User{
     @NotBlank(message = "Phone Number is required")
     private String phoneNumber;
 
-    @NotBlank(message = "Password is required")
-    private String password;
 }

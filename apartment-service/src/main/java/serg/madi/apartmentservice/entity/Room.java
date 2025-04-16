@@ -1,20 +1,43 @@
 package serg.madi.apartmentservice.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+import org.hibernate.proxy.HibernateProxy;
+import serg.madi.apartmentservice.entity.enums.RoomType;
+
+import java.util.Objects;
+
 
 @Entity
 @Table(name = "rooms")
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
+@Builder
+@AllArgsConstructor
 public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String roomType;
+
+    @Enumerated(EnumType.STRING)
+    private RoomType roomType;
     private String countOfBeds;
 
-    @ManyToOne
-    @JoinColumn(name = "apartment_id", nullable = false)
-    private Apartment apartment;
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        Class<?> oEffectiveClass = o instanceof HibernateProxy proxy ? proxy.getHibernateLazyInitializer().getPersistentClass() : o.getClass();
+        Class<?> thisEffectiveClass = this instanceof HibernateProxy proxy ? proxy.getHibernateLazyInitializer().getPersistentClass() : this.getClass();
+        if (thisEffectiveClass != oEffectiveClass) return false;
+        Room room = (Room) o;
+        return getId() != null && Objects.equals(getId(), room.getId());
+    }
 
+    @Override
+    public final int hashCode() {
+        return this instanceof HibernateProxy proxy ? proxy.getHibernateLazyInitializer().getPersistentClass().hashCode() : getClass().hashCode();
+    }
 }

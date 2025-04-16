@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AmplicodeJpaPluginProjectSettings">
+    <option name="lastSelectedLanguage" value="Java" />
+  </component>
+  <component name="AmplicodePersistenceUnitSettings">
+    <persistence-units>
+      <persistence-unit moduleName="apartment-service" name="Default">
+        <packages>
+          <package value="serg.madi.apartmentservice" />
+        </packages>
+      </persistence-unit>
+      <persistence-unit moduleName="booking-service" name="Default">
+        <packages>
+          <package value="serg.madi.bookingservice" />
+        </packages>
+      </persistence-unit>
+      <persistence-unit moduleName="favorite-service" name="Default">
+        <packages>
+          <package value="serg.madi.favoriteservice" />
+        </packages>
+      </persistence-unit>
+      <persistence-unit moduleName="payment-service" name="Default">
+        <packages>
+          <package value="serg.madi.paymentservice" />
+        </packages>
+      </persistence-unit>
+      <persistence-unit moduleName="review-service" name="Default">
+        <packages>
+          <package value="serg.madi.reviewservice" />
+        </packages>
+      </persistence-unit>
+      <persistence-unit moduleName="user-service" name="Default">
+        <packages>
+          <package value="serg.madi.userservice" />
+        </packages>
+      </persistence-unit>
+    </persistence-units>
+  </component>
+</project>

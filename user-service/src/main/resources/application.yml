@@ -10,6 +10,26 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://127.0.0.1:8089/realms/qonys
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: user-service
+            client-secret: mwD49tbkyxXti0rKswzKY8aGy3iJc6jq
+            scope:
+              - openid
+              - microprofile-jwt
 
 server:
   port: 8080
+
+logging:
+  level:
+    org:
+      springframework:
+        security: TRACE

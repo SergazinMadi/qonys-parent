@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cf014130-a1e8-4a80-81c3-45bf0bcd7571" name="Changes" comment="Add Maven configuration for apartment service project">
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/config/KafkaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/contoller/ApartmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/dto/dto/AmenityDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/dto/dto/ApartmentDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/dto/dto/CityDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/dto/dto/RoomDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/dto/kafka_events/BookingKafkaEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/dto/kafka_events/KafkaEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/dto/mapper/ApartmentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/dto/request/ApartmentRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/dto/request/RoomRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/ApartmentBooks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/RoomApartment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/enums/BookingStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/enums/RoomType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/repository/ApartmentBooksRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/repository/RoomApartmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/service/ApartmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/service/impl/ApartmentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/service/util/KafkaProducerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/config/KafkaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/contoller/BookingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/dto/dto/BookingDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/dto/kafka_events/BookingKafkaEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/dto/kafka_events/KafkaEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/dto/mapper/BookingMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/dto/request/BookingRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/service/BookingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/service/impl/BookingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/service/util/KafkaProducerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favorite-service/src/main/java/serg/madi/favoriteservice/entity/FavoriteApartment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favorite-service/src/main/java/serg/madi/favoriteservice/repository/FavoriteApartmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/contoller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/templates/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/amplicode-jpa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/amplicode-settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/Amenity.java" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/Amenity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/AmenityApartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/AmenityApartment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/Apartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/Apartment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/repository/RoomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/repository/RoomRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/entity/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/entity/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/entity/Payment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/repository/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/repository/BookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/repository/PaymentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorite-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/favorite-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/review-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/review-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/apartment-management-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/payment-service">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="payment-service" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="com.haulmont.ampsbb.Component" />
+        <option value="" />
+        <option value="SpringRestController" />
+        <option value="Enum" />
+        <option value="com.haulmont.ampjpb.NewClass" />
+        <option value="Interface" />
+        <option value="com.haulmont.ampjpb.NewInterface" />
+        <option value="package-info" />
+        <option value="com.haulmont.ampjpb.JpaRepository" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sausaq&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sausaq/qonys-parent.git&quot;,
+    &quot;accountId&quot;: &quot;cf4d52f7-e18d-443a-b592-5dee1a6f6da3&quot;
+  }
+}</component>
+  <component name="GradleModuleStateConfig" initialized="true">
+    <option name="configPaths">
+      <map>
+        <entry key="$PROJECT_DIR$/apartment-management-service" value="$PROJECT_DIR$/apartment-management-service/build.gradle" />
+        <entry key="$PROJECT_DIR$/payment-service" value="$PROJECT_DIR$/payment-service/build.gradle" />
+      </map>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2vBLiKh0cXnYogVrXKpZgrI2pTF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.apartment-management-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApartmentServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.BookingServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.FavoriteServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UserServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/madi/IdeaProjects/IITU/src/Lab8&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.26091954&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.haulmont.ampsbb.spring.devtools&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="serg.madi.apartmentservice.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/dto/kafka_events" />
+      <recent name="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice" />
+      <recent name="$PROJECT_DIR$/favorite-service/src/main/java/serg/madi/favoriteservice" />
+      <recent name="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice" />
+      <recent name="$PROJECT_DIR$/review-service/src/main/java/serg/madi/reviewservice/entity" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ApartmentServiceApplication">
+    <configuration name="ApartmentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="apartment-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="serg.madi.apartmentservice.ApartmentServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookingServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="booking-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="serg.madi.bookingservice.BookingServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FavoriteServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="favorite-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="serg.madi.favoriteservice.FavoriteServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="payment-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="serg.madi.paymentservice.PaymentServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="review-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="serg.madi.reviewservice.ReviewServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="user-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="serg.madi.userservice.UserServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cf014130-a1e8-4a80-81c3-45bf0bcd7571" name="Changes" comment="" />
+      <created>1743613649524</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743613649524</updated>
+      <workItem from="1743613650491" duration="5945000" />
+      <workItem from="1743657631592" duration="607000" />
+      <workItem from="1743663212215" duration="24000" />
+      <workItem from="1743758084278" duration="4996000" />
+      <workItem from="1743828695476" duration="1420000" />
+      <workItem from="1743830125930" duration="702000" />
+      <workItem from="1743830836032" duration="3184000" />
+      <workItem from="1744298514144" duration="345000" />
+      <workItem from="1744298868740" duration="75000" />
+      <workItem from="1744298949353" duration="279000" />
+      <workItem from="1744299237158" duration="267000" />
+      <workItem from="1744299526452" duration="1636000" />
+      <workItem from="1744348079592" duration="13000" />
+      <workItem from="1744363338187" duration="118000" />
+      <workItem from="1744363465438" duration="690000" />
+      <workItem from="1744364167756" duration="115000" />
+      <workItem from="1744364288101" duration="110000" />
+      <workItem from="1744364410680" duration="194000" />
+      <workItem from="1744364610512" duration="11237000" />
+      <workItem from="1744379207822" duration="1721000" />
+      <workItem from="1744436641216" duration="3245000" />
+      <workItem from="1744444519818" duration="2480000" />
+      <workItem from="1744467673422" duration="13676000" />
+      <workItem from="1744555681064" duration="8176000" />
+      <workItem from="1744633738990" duration="1020000" />
+      <workItem from="1744634769916" duration="10764000" />
+      <workItem from="1744664238344" duration="4363000" />
+      <workItem from="1744704657981" duration="30000" />
+      <workItem from="1744704904258" duration="1555000" />
+      <workItem from="1744739543688" duration="14016000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add apartment service entities, repositories, and configuration files">
+      <option name="closed" value="true" />
+      <created>1744299665972</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744299665972</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add Maven configuration for apartment service project">
+      <option name="closed" value="true" />
+      <created>1744299673525</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744299673525</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add apartment service entities, repositories, and configuration files" />
+    <MESSAGE value="Add Maven configuration for apartment service project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Maven configuration for apartment service project" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
