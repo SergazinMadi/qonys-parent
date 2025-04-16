@@ -25,6 +25,8 @@ public class BookingKafkaEvent extends KafkaEvent {
     private Long userId;
     private Long apartmentId;
 
+    private Double price;
+
     @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate checkIn;
 
@@ -38,6 +40,7 @@ public class BookingKafkaEvent extends KafkaEvent {
         event.setApartmentId(booking.getApartmentId());
         event.setCheckIn(booking.getCheckIn());
         event.setCheckOut(booking.getCheckOut());
+        event.setPrice(booking.getPrice());
         return event;
     }
 }

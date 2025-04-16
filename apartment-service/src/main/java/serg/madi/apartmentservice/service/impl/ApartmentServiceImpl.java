@@ -1,26 +1,19 @@
 package serg.madi.apartmentservice.service.impl;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import serg.madi.apartmentservice.dto.dto.ApartmentDto;
-import serg.madi.apartmentservice.dto.kafka_events.BookingKafkaEvent;
 import serg.madi.apartmentservice.dto.mapper.ApartmentMapper;
 import serg.madi.apartmentservice.dto.request.ApartmentRequest;
 import serg.madi.apartmentservice.entity.*;
-import serg.madi.apartmentservice.entity.enums.BookingStatus;
 import serg.madi.apartmentservice.entity.enums.RoomType;
 import serg.madi.apartmentservice.repository.*;
 import serg.madi.apartmentservice.service.ApartmentService;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Slf4j
@@ -34,8 +27,6 @@ public class ApartmentServiceImpl implements ApartmentService {
     private final RoomApartmentRepository roomApartmentRepository;
     private final AmenityRepository amenityRepository;
     private final ApartmentMapper apartmentMapper;
-    private final ApartmentBooksRepository apartmentBooksRepository;
-    private final ObjectMapper objectMapper;
 
     @Override
     public Page<ApartmentDto> getApartments(Pageable pageable) {
@@ -91,39 +82,6 @@ public class ApartmentServiceImpl implements ApartmentService {
         roomRepository.deleteAll(unusedRooms);
 
         apartmentRepository.delete(apartment);
-    }
-
-    @KafkaListener(topics = "booking.requested", groupId = "apartment")
-    @Transactional
-    public void handleBookingRequest(String message) throws JsonProcessingException {
-        System.out.println("✅ Получено событие: " + message);
-
-        BookingKafkaEvent bookingKafkaEvent = objectMapper.readValue(message, BookingKafkaEvent.class);
-        Apartment apartment = apartmentRepository.findById(bookingKafkaEvent.getApartmentId())
-                .orElseThrow(() -> new EntityNotFoundException("Apartment not found"));
-
-
-
-        LocalDate requestedCheckIn = bookingKafkaEvent.getCheckIn();
-        LocalDate requestedCheckOut = bookingKafkaEvent.getCheckOut();
-
-        apartmentBooksRepository.findByApartment(apartment)
-                .forEach(apartmentBooks -> {
-                    if (apartmentBooks.getCheckIn().isBefore(requestedCheckOut) &&
-                            apartmentBooks.getCheckOut().isAfter(requestedCheckIn)) {
-                        log.info("Apartment is already booked");
-                        throw new IllegalStateException("Apartment is already booked");
-                    }
-                });
-
-        ApartmentBooks apartmentBooks = new ApartmentBooks();
-        apartmentBooks.setApartment(apartment);
-        apartmentBooks.setCheckIn(requestedCheckIn);
-        apartmentBooks.setCheckOut(requestedCheckOut);
-        apartmentBooks.setBookingStatus(BookingStatus.TEMPORARY);
-        apartmentBooksRepository.save(apartmentBooks);
-
-        System.out.println("Apartment booked " + bookingKafkaEvent.getApartmentId());
     }
 
     private void requestToEntity(ApartmentRequest apartmentRequest, Apartment apartment) {

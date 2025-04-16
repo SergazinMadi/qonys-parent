@@ -8,6 +8,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
+import serg.madi.bookingservice.entity.enums.BookingStatus;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -33,17 +34,16 @@ public class Booking {
     @NotBlank
     private Long userId;
 
-    @JsonProperty("expireAt")
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @Enumerated(EnumType.STRING)
+    private BookingStatus status;
+
     @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate checkIn;
 
-    @JsonProperty("expireAt")
-    @JsonFormat(pattern = "yyyy-MM-dd")
     @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate checkOut;
     private Integer peopleCount;
-    private Float price;
+    private Double price;
 
     @Override
     public final boolean equals(Object o) {

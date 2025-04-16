@@ -15,5 +15,5 @@ public class BookingRequest {
     LocalDate checkIn;
     LocalDate checkOut;
     Integer peopleCount;
-    Float price;
+    Double price;
 }

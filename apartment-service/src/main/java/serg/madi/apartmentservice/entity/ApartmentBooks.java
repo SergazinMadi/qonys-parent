@@ -14,6 +14,7 @@ import java.time.LocalDate;
 @RequiredArgsConstructor
 public class ApartmentBooks {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
