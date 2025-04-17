@@ -1,10 +1,10 @@
-package serg.madi.favoriteservice;
+package serg.madi.configserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FavoriteServiceApplicationTests {
+class ConfigServerApplicationTests {
 
     @Test
     void contextLoads() {

@@ -15,19 +15,9 @@
           <package value="serg.madi.bookingservice" />
         </packages>
       </persistence-unit>
-      <persistence-unit moduleName="favorite-service" name="Default">
-        <packages>
-          <package value="serg.madi.favoriteservice" />
-        </packages>
-      </persistence-unit>
       <persistence-unit moduleName="payment-service" name="Default">
         <packages>
           <package value="serg.madi.paymentservice" />
-        </packages>
-      </persistence-unit>
-      <persistence-unit moduleName="review-service" name="Default">
-        <packages>
-          <package value="serg.madi.reviewservice" />
         </packages>
       </persistence-unit>
       <persistence-unit moduleName="user-service" name="Default">

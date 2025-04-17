@@ -1,0 +1,43 @@
+server:
+  port: 8086
+  forward-headers-strategy: framework
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: booking-service
+          uri: lb://booking-service
+          predicates:
+            - Host=booking.127.0.0.1.nip.io:8086,booking.127.0.0.1.nip.io
+
+        - id: apartment-service
+          uri: lb://apartment-service
+          predicates:
+            - Host=apartment.127.0.0.1.nip.io:8086,apartment.127.0.0.1.nip.io
+
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Host=user.127.0.0.1.nip.io:8086,user.127.0.0.1.nip.io
+
+        - id: payment-service
+          uri: lb://payment-service
+          predicates:
+            - Host=payment.127.0.0.1.nip.io:8086,payment.127.0.0.1.nip.io
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+logging:
+  level:
+    org:
+      springframework:
+        cloud: TRACE

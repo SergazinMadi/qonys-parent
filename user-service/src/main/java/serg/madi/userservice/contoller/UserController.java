@@ -9,7 +9,7 @@ import serg.madi.userservice.service.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
