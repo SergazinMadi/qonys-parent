@@ -1,0 +1,35 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/SergazinMadi/qonys-config.git
+          clone-on-start: true
+          default-label: master
+          search-paths:
+            - '{application}/{profile}'
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - prometheus
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  tracing:
+    sampling:
+      probability: 1.0

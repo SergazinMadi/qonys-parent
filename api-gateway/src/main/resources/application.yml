@@ -12,23 +12,41 @@ spring:
         - id: booking-service
           uri: lb://booking-service
           predicates:
-            - Host=booking.127.0.0.1.nip.io:8086,booking.127.0.0.1.nip.io
-
+            - Path=/booking/**
+          filters:
+            - StripPrefix=1
         - id: apartment-service
           uri: lb://apartment-service
           predicates:
-            - Host=apartment.127.0.0.1.nip.io:8086,apartment.127.0.0.1.nip.io
-
+            - Path=/apartment/**
+          filters:
+            - StripPrefix=1
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Host=user.127.0.0.1.nip.io:8086,user.127.0.0.1.nip.io
-
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
         - id: payment-service
           uri: lb://payment-service
           predicates:
-            - Host=payment.127.0.0.1.nip.io:8086,payment.127.0.0.1.nip.io
+            - Path=/payment/**
+          filters:
+            - StripPrefix=1
 
+#springdoc:
+#  swagger-ui:
+#    path: /swagger-ui.html   # swagger будет доступен по http://localhost:8086/swagger-ui.html
+#
+#    urls:
+#      - name: user-service
+#        url: /user/v3/api-docs
+#      - name: booking-service
+#        url: /booking/v3/api-docs
+#      - name: apartment-service
+#        url: /apartment/v3/api-docs
+#      - name: payment-service
+#        url: /payment/v3/api-docs
 
 eureka:
   instance:
@@ -36,8 +54,18 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-logging:
-  level:
-    org:
-      springframework:
-        cloud: TRACE
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - prometheus
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  tracing:
+    sampling:
+      probability: 1.0

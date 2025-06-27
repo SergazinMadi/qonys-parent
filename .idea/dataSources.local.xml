@@ -6,6 +6,7 @@
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
       <user-name>postgres</user-name>
       <schema-mapping>
         <introspection-scope>
@@ -20,6 +21,7 @@
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
       <user-name>postgres</user-name>
       <schema-mapping>
         <introspection-scope>
@@ -38,16 +40,8 @@
       <user-name>postgres</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node negative="1">
-            <node kind="database" negative="1" />
-            <node kind="database" qname="@">
-              <node kind="schema" qname="@" />
-            </node>
-            <node kind="database">
-              <name qname="booking_service_db" />
-              <name qname="postgres" />
-              <node kind="schema" negative="1" />
-            </node>
+          <node kind="database" qname="booking_service_db">
+            <node kind="schema" qname="public" />
           </node>
         </introspection-scope>
       </schema-mapping>
@@ -63,6 +57,30 @@
         <introspection-scope>
           <node kind="database" qname="@">
             <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+    <data-source name="postgres@localhost" uuid="84f7da43-9f71-4ff2-9345-ef790c5c2471">
+      <database-info product="PostgreSQL" version="16.8 (Ubuntu 16.8-0ubuntu0.24.04.1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.7.3" dbms="POSTGRES" exact-version="16.8" exact-driver-version="42.7">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node negative="1">
+            <node kind="database" qname="@">
+              <node kind="schema" qname="@" />
+            </node>
+            <node kind="database">
+              <name qname="apartment_service_db" />
+              <name qname="booking_service_db" />
+              <name qname="payment_service_db" />
+              <name qname="user_service_db" />
+              <node kind="schema" qname="public" />
+            </node>
           </node>
         </introspection-scope>
       </schema-mapping>

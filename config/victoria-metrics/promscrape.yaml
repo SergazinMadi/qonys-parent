@@ -1,0 +1,104 @@
+scrape_configs:
+
+#  Microservices
+  - job_name: booking-service
+    static_configs:
+      - targets: ["host.docker.internal:8082"]
+        labels:
+          application: booking-service
+    metrics_path: /actuator/prometheus
+    oauth2:
+      client_id: victoria-metrics
+      client_secret: srkVrsUzW4gYy3D018Ufcdu6X4zAR4Ks
+      token_url: http://172.17.0.1:8089/realms/qonys/protocol/openid-connect/token
+      scopes:
+        - metrics
+      endpoint_params:
+        grant_type: client_credentials
+  - job_name: apartment-service
+    static_configs:
+      - targets: [ "host.docker.internal:8081" ]
+        labels:
+          application: apartment-service
+    metrics_path: /actuator/prometheus
+    oauth2:
+      client_id: victoria-metrics
+      client_secret: srkVrsUzW4gYy3D018Ufcdu6X4zAR4Ks
+      token_url: http://172.17.0.1:8089/realms/qonys/protocol/openid-connect/token
+      scopes:
+        - metrics
+      endpoint_params:
+        grant_type: client_credentials
+  - job_name: user-service
+    static_configs:
+      - targets: [ "host.docker.internal:8080" ]
+        labels:
+          application: user-service
+    metrics_path: /actuator/prometheus
+    oauth2:
+      client_id: victoria-metrics
+      client_secret: srkVrsUzW4gYy3D018Ufcdu6X4zAR4Ks
+      token_url: http://172.17.0.1:8089/realms/qonys/protocol/openid-connect/token
+      scopes:
+        - metrics
+      endpoint_params:
+        grant_type: client_credentials
+  - job_name: payment-service
+    static_configs:
+      - targets: [ "host.docker.internal:8085" ]
+        labels:
+          application: payment-service
+    metrics_path: /actuator/prometheus
+    oauth2:
+      client_id: victoria-metrics
+      client_secret: srkVrsUzW4gYy3D018Ufcdu6X4zAR4Ks
+      token_url: http://172.17.0.1:8089/realms/qonys/protocol/openid-connect/token
+      scopes:
+        - metrics
+      endpoint_params:
+        grant_type: client_credentials
+
+# Other Services
+  - job_name: api-gateway
+    static_configs:
+      - targets: [ "host.docker.internal:8086" ]
+        labels:
+          application: api-gateway
+    metrics_path: /actuator/prometheus
+    oauth2:
+      client_id: victoria-metrics
+      client_secret: srkVrsUzW4gYy3D018Ufcdu6X4zAR4Ks
+      token_url: http://172.17.0.1:8089/realms/qonys/protocol/openid-connect/token
+      scopes:
+        - metrics
+      endpoint_params:
+        grant_type: client_credentials
+
+  - job_name: netflix-eureka
+    static_configs:
+      - targets: [ "host.docker.internal:8761" ]
+        labels:
+          application: netflix-eureka
+    metrics_path: /actuator/prometheus
+    oauth2:
+      client_id: victoria-metrics
+      client_secret: srkVrsUzW4gYy3D018Ufcdu6X4zAR4Ks
+      token_url: http://172.17.0.1:8089/realms/qonys/protocol/openid-connect/token
+      scopes:
+        - metrics
+      endpoint_params:
+        grant_type: client_credentials
+  - job_name: config-server
+    static_configs:
+      - targets: [ "host.docker.internal:8888" ]
+        labels:
+          application: config-server
+    metrics_path: /actuator/prometheus
+    oauth2:
+      client_id: victoria-metrics
+      client_secret: srkVrsUzW4gYy3D018Ufcdu6X4zAR4Ks
+      token_url: http://172.17.0.1:8089/realms/qonys/protocol/openid-connect/token
+      scopes:
+        - metrics
+      endpoint_params:
+        grant_type: client_credentials

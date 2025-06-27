@@ -2,7 +2,7 @@ spring:
   application:
     name: booking-service
   datasource:
-    url: jdbc:postgresql://localhost:5435/booking_service_db
+    url: jdbc:postgresql://localhost:5432/booking_service_db
     username: postgres
     password: Nadi.3344
 
@@ -11,6 +11,25 @@ spring:
     hibernate:
       ddl-auto: update
 
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://172.17.0.1:8089/realms/qonys
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://127.0.0.1:8089/realms/qonys
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: booking-service
+            client-secret: wVmAJuzAdGEEqHJCZrUEXDhequ320Bfc
+            scope:
+              - openid
+              - microprofile-jwt
+
 eureka:
   instance:
     prefer-ip-address: true
@@ -18,5 +37,22 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 
+
+
 server:
   port: 8082
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - prometheus
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  tracing:
+    sampling:
+      probability: 1.0

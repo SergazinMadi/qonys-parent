@@ -2,7 +2,7 @@ spring:
   application:
     name: payment-service
   datasource:
-    url: jdbc:postgresql://localhost:5438/payment_service_db
+    url: jdbc:postgresql://localhost:5432/payment_service_db
     username: postgres
     password: Nadi.3344
 
@@ -10,6 +10,20 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://127.0.0.1:8089/realms/qonys
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: payment-service
+            client-secret: JDu6ArmXHCJZci7wAQtGXjYC8fPPrNiH
+            scope:
+              - openid
+              - microprofile-jwt
 
 eureka:
   instance:
@@ -20,3 +34,18 @@ eureka:
 
 server:
   port: 8085
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - prometheus
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  tracing:
+    sampling:
+      probability: 1.0

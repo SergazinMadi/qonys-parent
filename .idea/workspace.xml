@@ -4,53 +4,85 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf014130-a1e8-4a80-81c3-45bf0bcd7571" name="Changes" comment="Add Maven Wrapper and configuration files">
+    <list default="true" id="cf014130-a1e8-4a80-81c3-45bf0bcd7571" name="Changes" comment="Add Config Server and remove Favorite/Review services&#10;&#10;Replaced Favorite and Review services with a Config Server implementation. Deleted all related files and configurations for the Favorite and Review services while adding necessary resources and structure for the Spring Cloud Config Server.">
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apartment-service/src/main/resources/application-cloudconfig.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application-cloudconfig.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/exceptions/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/saga/BookingSaga.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/resources/application-cloudconfig.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/booking-service/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/tempo/tempo.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/victoria-metrics/promscrape.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/commands/ConfirmApartmentBooking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/commands/ConfirmBooking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/commands/ProcessPayment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/commands/RefundPayment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/commands/RejectBooking.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/commands/ReleaseApartment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/commands/ReserveApartment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/events/ApartmentReservationFailed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/events/ApartmentReserved.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/events/BookingConfirmed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/events/BookingCreated.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/events/BookingHistoryUpdated.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/events/BookingRejected.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/events/PaymentFailed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/serg/madi/core/dto/events/PaymentSucceeded.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/netflix-eureka/src/main/resources/application-cloudconfig.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/serg/madi/paymentservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application-cloudconfig.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application-cloudconfig.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/23f3e982-23da-4b3d-b809-69b992f7cb64.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/23f3e982-23da-4b3d-b809-69b992f7cb64.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/23f3e982-23da-4b3d-b809-69b992f7cb64/storage_v2/_src_/database/apartment_service_db.dR2qjQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/23f3e982-23da-4b3d-b809-69b992f7cb64/storage_v2/_src_/database/apartment_service_db.dR2qjQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/efd063c3-bc9c-418e-a378-35005a5dd84c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/efd063c3-bc9c-418e-a378-35005a5dd84c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/efd063c3-bc9c-418e-a378-35005a5dd84c/storage_v2/_src_/database/booking_service_db.7v1CqQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/efd063c3-bc9c-418e-a378-35005a5dd84c/storage_v2/_src_/database/booking_service_db.7v1CqQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/efd063c3-bc9c-418e-a378-35005a5dd84c/storage_v2/_src_/database/booking_service_db.7v1CqQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/efd063c3-bc9c-418e-a378-35005a5dd84c/storage_v2/_src_/database/booking_service_db.7v1CqQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/efd063c3-bc9c-418e-a378-35005a5dd84c/storage_v2/_src_/database/booking_service_db.7v1CqQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/efd063c3-bc9c-418e-a378-35005a5dd84c/storage_v2/_src_/database/booking_service_db.7v1CqQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/efd063c3-bc9c-418e-a378-35005a5dd84c/storage_v2/_src_/database/booking_service_db.7v1CqQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/efd063c3-bc9c-418e-a378-35005a5dd84c/storage_v2/_src_/database/booking_service_db.7v1CqQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amplicode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/amplicode.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apartment-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/ApartmentServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/ApartmentServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/contoller/ApartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/contoller/ApartmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/config/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/ApartmentBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/ApartmentBooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/enums/BookingStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/entity/enums/BookingStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/repository/ApartmentBooksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/repository/ApartmentBooksRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/service/util/KafkaConsumerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/service/handler/KafkaConsumerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/service/util/KafkaProducerService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apartment-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apartment-service/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/serg/madi/apigateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/serg/madi/apigateway/ApiGatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booking-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/BookingServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/BookingServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/contoller/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/contoller/BookingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/config/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/entity/enums/BookingStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/entity/enums/BookingStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/service/impl/BookingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/service/impl/BookingServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/service/util/KafkaConsumerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/service/handler/KafkaConsumerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice/service/util/KafkaProducerService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/booking-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/booking-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite-service/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite-service/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite-service/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite-service/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite-service/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite-service/src/main/java/serg/madi/favoriteservice/FavoriteServiceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite-service/src/main/java/serg/madi/favoriteservice/entity/FavoriteApartment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite-service/src/main/java/serg/madi/favoriteservice/repository/FavoriteApartmentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite-service/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite-service/src/test/java/serg/madi/favoriteservice/FavoriteServiceApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/netflix-eureka/src/main/java/serg/madi/netflixeurika/NetflixEurikaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/netflix-eureka/src/main/java/serg/madi/netflixeurika/NetflixEurikaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/java/serg/madi/configserver/ConfigServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/java/serg/madi/configserver/ConfigServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netflix-eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/netflix-eureka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netflix-eureka/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/netflix-eureka/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payment-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/serg/madi/paymentservice/PaymentServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/serg/madi/paymentservice/PaymentServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/serg/madi/paymentservice/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/serg/madi/paymentservice/config/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/serg/madi/paymentservice/service/util/KafkaConsumerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/serg/madi/paymentservice/service/handler/KafkaConsumerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/serg/madi/paymentservice/service/util/KafkaProducerService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/src/main/java/serg/madi/reviewservice/ReviewServiceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/src/main/java/serg/madi/reviewservice/entity/Review.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/src/main/java/serg/madi/reviewservice/repository/ReviewRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/src/test/java/serg/madi/reviewservice/ReviewServiceApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/contoller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/contoller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/serg/madi/userservice/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,8 +167,18 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Docker.docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.kafka-ui.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.ApartmentServiceApplication | #1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in booking-service.executor&quot;: &quot;Run&quot;,
     &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
     &quot;Maven.apartment-management-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.apartment-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.api-gateway [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.booking-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.booking-service [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.config-server [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.config-server [test].executor&quot;: &quot;Run&quot;,
     &quot;Maven.netflix-eureka [clean].executor&quot;: &quot;Run&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
@@ -147,7 +189,9 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.ApartmentServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.BookingServiceApplication (1).executor&quot;: &quot;Debug&quot;,
     &quot;Spring Boot.BookingServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.FavoriteServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.NetflixEurikaApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.PaymentServiceApplication.executor&quot;: &quot;Run&quot;,
@@ -155,7 +199,7 @@
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/madi/IdeaProjects/qonys-parent/payment-service/src/main/java/serg/madi/paymentservice&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/madi/IdeaProjects/qonys-parent/booking-service/src/main/java/serg/madi/bookingservice&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -165,7 +209,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.26091954&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;spring&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -174,20 +218,26 @@
     ]
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="serg.madi.apartmentservice.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/payment-service/src/main/java/serg/madi/paymentservice" />
-      <recent name="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice/dto/kafka_events" />
       <recent name="$PROJECT_DIR$/booking-service/src/main/java/serg/madi/bookingservice" />
-      <recent name="$PROJECT_DIR$/favorite-service/src/main/java/serg/madi/favoriteservice" />
-      <recent name="$PROJECT_DIR$/apartment-service/src/main/java/serg/madi/apartmentservice" />
+      <recent name="$PROJECT_DIR$/user-service/src/main/resources" />
+      <recent name="$PROJECT_DIR$/payment-service/src/main/resources" />
+      <recent name="$PROJECT_DIR$/netflix-eureka/src/main/resources" />
+      <recent name="$PROJECT_DIR$/api-gateway/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="serg.madi.apartmentservice.config" />
+      <recent name="serg.madi.userservice.config" />
+      <recent name="serg.madi.paymentservice.config" />
+      <recent name="serg.madi.bookingservice.config" />
       <recent name="serg.madi.paymentservice.dto.kafka_events" />
-      <recent name="serg.madi.bookingservice.dto.kafka_events" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -201,6 +251,17 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ApartmentServiceApplication">
+    <configuration name="ApartmentServiceApplication | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/ApartmentServiceApplication.http" executionIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="All in booking-service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="booking-service" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApartmentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="apartment-service" />
@@ -216,10 +277,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookingServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="BookingServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="LOKI" value="http://172.17.0.1:3100" />
+      </envs>
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="booking-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="serg.madi.bookingservice.BookingServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="serg.madi.bookingservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -254,6 +324,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-image" temporary="true">
+      <deployment type="docker-image">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="HTTP Request.ApartmentServiceApplication | #1" />
+      <item itemvalue="JUnit.All in booking-service" />
+      <item itemvalue="Spring Boot.ApartmentServiceApplication" />
+      <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Spring Boot.NetflixEurikaApplication" />
+      <item itemvalue="Spring Boot.PaymentServiceApplication" />
+      <item itemvalue="Spring Boot.UserServiceApplication" />
+      <item itemvalue="Spring Boot.BookingServiceApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.BookingServiceApplication" />
+        <item itemvalue="HTTP Request.ApartmentServiceApplication | #1" />
+        <item itemvalue="JUnit.All in booking-service" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -264,6 +364,20 @@
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringProfilesService">
+    <option name="activeProfiles">
+      <map>
+        <entry key="apartment-service" value="cloudconfig" />
+        <entry key="api-gateway" value="cloudconfig" />
+        <entry key="booking-service" value="cloudconfig" />
+        <entry key="config-server" value="cloudconfig" />
+        <entry key="netflix-eureka" value="cloudconfig" />
+        <entry key="payment-service" value="cloudconfig" />
+        <entry key="qonys-parent" value="cloudconfig" />
+        <entry key="user-service" value="cloudconfig" />
+      </map>
+    </option>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="cf014130-a1e8-4a80-81c3-45bf0bcd7571" name="Changes" comment="" />
@@ -303,7 +417,39 @@
       <workItem from="1744739543688" duration="27164000" />
       <workItem from="1744817542617" duration="2155000" />
       <workItem from="1744820622888" duration="17690000" />
-      <workItem from="1744893432244" duration="2661000" />
+      <workItem from="1744893432244" duration="9004000" />
+      <workItem from="1744955620505" duration="13000" />
+      <workItem from="1744979724540" duration="12790000" />
+      <workItem from="1745049589618" duration="427000" />
+      <workItem from="1745050233478" duration="6007000" />
+      <workItem from="1745057446141" duration="4227000" />
+      <workItem from="1745149400797" duration="7213000" />
+      <workItem from="1745160646260" duration="61000" />
+      <workItem from="1745160795438" duration="2549000" />
+      <workItem from="1745169172108" duration="3720000" />
+      <workItem from="1745399898506" duration="864000" />
+      <workItem from="1745436448689" duration="1909000" />
+      <workItem from="1745441579844" duration="1000" />
+      <workItem from="1745446425158" duration="103000" />
+      <workItem from="1745588852882" duration="842000" />
+      <workItem from="1745593400079" duration="6164000" />
+      <workItem from="1745655926041" duration="1919000" />
+      <workItem from="1745758257015" duration="8000" />
+      <workItem from="1746619182335" duration="44000" />
+      <workItem from="1747032785818" duration="2415000" />
+      <workItem from="1747050970520" duration="7000" />
+      <workItem from="1747050991964" duration="7000" />
+      <workItem from="1747145962861" duration="5414000" />
+      <workItem from="1747227011388" duration="56000" />
+      <workItem from="1747314274242" duration="6864000" />
+      <workItem from="1747481731025" duration="4979000" />
+      <workItem from="1747569048554" duration="7535000" />
+      <workItem from="1747648402275" duration="3143000" />
+      <workItem from="1747831149618" duration="2138000" />
+      <workItem from="1747897493796" duration="200000" />
+      <workItem from="1747921328469" duration="2550000" />
+      <workItem from="1748087876050" duration="7901000" />
+      <workItem from="1748521782987" duration="2495000" />
     </task>
     <task id="LOCAL-00001" summary="Add apartment service entities, repositories, and configuration files">
       <option name="closed" value="true" />
@@ -353,11 +499,30 @@
       <option name="project" value="LOCAL" />
       <updated>1744820262839</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add Config Server and remove Favorite/Review services&#10;&#10;Replaced Favorite and Review services with a Config Server implementation. Deleted all related files and configurations for the Favorite and Review services while adding necessary resources and structure for the Spring Cloud Config Server.">
+      <option name="closed" value="true" />
+      <created>1744897703843</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744897703843</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add apartment service entities, repositories, and configuration files" />
@@ -365,7 +530,9 @@
     <MESSAGE value="Add DTOs, entities, and Kafka configuration for apartment service" />
     <MESSAGE value="Add Kafka configuration, payment processing, and booking event handling" />
     <MESSAGE value="Add Netflix Eureka configuration and update project structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Netflix Eureka configuration and update project structure" />
+    <MESSAGE value="Add Maven Wrapper and configuration files" />
+    <MESSAGE value="Add Config Server and remove Favorite/Review services&#10;&#10;Replaced Favorite and Review services with a Config Server implementation. Deleted all related files and configurations for the Favorite and Review services while adding necessary resources and structure for the Spring Cloud Config Server." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Config Server and remove Favorite/Review services&#10;&#10;Replaced Favorite and Review services with a Config Server implementation. Deleted all related files and configurations for the Favorite and Review services while adding necessary resources and structure for the Spring Cloud Config Server." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,0 +1,9 @@
+GET http://localhost:8081/actuator
+Accept: application/vnd.spring-boot.actuator.v3+json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+<> 2025-05-24T184431.200.json
+
+###
+
